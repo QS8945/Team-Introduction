@@ -1,0 +1,214 @@
+.el-table {
+  margin-top: 15px;
+  // .el-table__expanded-cell {
+  //   .el-input {
+  //     font-size: 14px;
+  //     .el-input__inner {
+  //       height: 40px;
+  //     }
+  //   }
+  // }
+  // .el-input {
+  //   font-size: 12px;
+  //   line-height: 30px;
+  //   .el-input__inner {
+  //     height: 30px;
+  //   }
+  // }
+  .el-input-number {
+    line-height: 28px;
+    width: auto;
+    .el-input-number__decrease,
+    .el-input-number__increase {
+      width: 30px;
+    }
+    .el-input__inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+.el-table.mini-table {
+  font-size: 10px;
+  td {
+    padding: 5px 0px;
+  }
+  th {
+    padding: 5px 0px;
+  }
+  .cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.el-form-item__content {
+  .el-table {
+    line-height: 23px;
+    font-size: 10px;
+  }
+}
+
+.el-pagination {
+  margin-top: 10px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.el-button-group{
+  .el-button{
+    height: 28px;
+    padding: 8px 14px;
+  }
+}
+.el-table--small, .el-table--medium,.el-table--default {
+  font-size: 12px;
+}
+.el-table th.el-table__cell{
+  background: #f2f3f4;
+}
+.el-table th{
+  font-weight: 600;
+  color: #626976;
+}
+#app {
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI,
+    Roboto, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ltw-toolbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 10px;
+
+  .ltw-tool-container {
+    margin-right: 10px;
+  }
+
+  .ltw-search-container {
+    width: 320px;
+  }
+}
+.el-sub-menu [class^='icon-'] {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+}
+.el-sub-menu [class*=' icon-'] {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+}
+.el-menu-item [class*=' icon-'] {
+  margin-right: 5px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.el-menu-item [class^='icon-'] {
+  margin-right: 5px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.el-table td,
+.el-table th {
+  padding: 10px 0px;
+}
+//[class*=" icon-"], [class^=icon-] {
+//  margin-right: 5px;
+//  width: 24px;
+//  text-align: center;
+//  font-size: 18px;
+//  vertical-align: middle;
+//}
+//[class*=" icon-"], [class^=icon-] {
+//  font-family: "iconfont" !important;
+//  font-size: 18px;
+//  font-style: normal;
+//  -webkit-font-smoothing: antialiased;
+//}
+.ltw-loading-mask {
+  position: absolute;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  .ltw-loading-spinner {
+    top: 50%;
+    margin-top: -21px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    i {
+      color: #409eff;
+    }
+    .ltw-loading-text {
+      color: #409eff;
+      margin: 3px 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.el-icon {
+  font-size: inherit;
+}
+.el-button {
+  .iconfont {
+    font-size: inherit;
+  }
+}
+
+.ltw-page-container {
+  height: 100%;
+  > .el-card {
+    height: 100%;
+    width: 100%;
+  }
+}
+.ghost {
+  background-color: rgba(241, 239, 239, 0.8);
+}
+
+.button-group {
+  .el-button {
+    margin-right: 10px;
+  }
+}
+.el-cascader-menu__wrap.el-scrollbar__wrap {
+  height: inherit;
+}
+.el-link{
+  font-size: 12px;
+}
