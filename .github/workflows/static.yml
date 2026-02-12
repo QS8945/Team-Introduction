@@ -32,9 +32,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
-        env:
-          NODE_ENV: development
+        run: npm install --include=dev --force
 
       - name: Build
         run: npm run build
