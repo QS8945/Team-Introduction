@@ -2,7 +2,8 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -16,10 +17,11 @@ concurrency:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -30,37 +32,10 @@ jobs:
         with:
           node-version: 18
 
-      - name: Debug: environment
-        run: |
-          echo "Runner user: $(whoami)"
-          echo "PWD: $(pwd)"
-          node -v
-          npm -v
-          echo "NODE_ENV (env): $NODE_ENV"
-          echo "npm config get production: $(npm config get production)"
-          echo "npm config get registry: $(npm config get registry)"
-
-      - name: Install dependencies (force dev)
-        run: |
-          # 关闭生产模式强制安装 dev 依赖
-          npm config set production false
-          # 推荐用 npm ci 来保持 determinism，并包含 dev 依赖
-          npm ci --include=dev --no-audit --no-fund
+      - name: Install dependencies
+        run: npm ci --include=dev
         env:
           NODE_ENV: development
-
-      - name: Verify installed packages
-        run: |
-          echo "=== npm ls @vue/cli-service ==="
-          npm ls @vue/cli-service --depth=0 || true
-          echo "=== node_modules/.bin listing (first 200 lines) ==="
-          ls -la node_modules/.bin || true
-          echo "=== check if local bin has vue-cli-service ==="
-          if [ -x node_modules/.bin/vue-cli-service ]; then
-            node_modules/.bin/vue-cli-service --version
-          else
-            echo "local vue-cli-service not executable or missing"
-          fi
 
       - name: Build
         run: npm run build
@@ -73,6 +48,6 @@ jobs:
         with:
           path: ./dist
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
